@@ -83,6 +83,24 @@ h3 { font-size: 1.6rem; }
 .contact p:not(.label) { margin: 0; }
 .social { display: flex; gap: 16px; margin-top: 28px; }
 
+/* Events */
+.section-head { text-align: center; margin-bottom: 50px; }
+.event-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.event-grid:has(.event-card) + .event-empty { display: none; }
+.event-empty { text-align: center; color: var(--muted); }
+.event-card { background: #131313; border: 1px solid var(--line); display: flex; flex-direction: column; }
+.event-card img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.event-body { display: flex; gap: 20px; padding: 26px; }
+.event-date { margin: 0; min-width: 62px; text-align: center; border: 1px solid var(--red); padding: 8px 4px; line-height: 1.1; height: fit-content; }
+.event-date span { display: block; color: var(--red); font-size: 12px; letter-spacing: .15em; }
+.event-date strong { font: 500 30px/1.1 var(--heading-font); color: var(--white); }
+.event-meta { color: var(--red); font-size: 13px; text-transform: uppercase; letter-spacing: .1em; margin: 0 0 10px; }
+.event-body p { margin: 0 0 18px; }
+.weekly { background: #0e0d0a; }
+.weekly-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center; }
+.weekly-grid > div { border: 1px solid var(--line); padding: 40px 24px; }
+.weekly-grid p { margin: 0; }
+
 /* Hours */
 .hours { list-style: none; padding: 0; margin: 0; }
 .hours li { display: flex; gap: 14px; }
@@ -128,7 +146,7 @@ h3 { font-size: 1.6rem; }
 }
 @media (max-width: 760px) {
   .container { padding: 56px 16px; }
-  .split, .two-col, .gallery3 { grid-template-columns: 1fr; gap: 32px; }
+  .split, .two-col, .gallery3, .event-grid, .weekly-grid { grid-template-columns: 1fr; gap: 32px; }
   .split-rev .split-img { order: 0; }
   .split-img img, .gallery3 img { height: 320px; }
   .about-row { grid-template-columns: 1fr 1fr; padding: 60px 0 20px; }
