@@ -23,3 +23,7 @@
   from = "/cart/*"
   to = "https://square.link/u/GzRtVHoB"
   status = 302
+[[redirects]]
+  from = "/gallery/*"
+  to = "/"
+  status = 302
