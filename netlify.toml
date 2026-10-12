@@ -1,0 +1,25 @@
+# Plain static site: no build step, publish the repo root.
+[build]
+  publish = "."
+
+# Old WordPress addresses -> new pages, so existing links and Google results keep working.
+[[redirects]]
+  from = "/booking-request/*"
+  to = "/booking/"
+  status = 301
+[[redirects]]
+  from = "/smsterms/*"
+  to = "/terms/"
+  status = 301
+[[redirects]]
+  from = "/privacy-policy-2/*"
+  to = "/privacy/"
+  status = 301
+[[redirects]]
+  from = "/wp-content/uploads/2026/02/Lockeroom-1.pdf"
+  to = "/menu/lockeroom-menu.pdf"
+  status = 301
+[[redirects]]
+  from = "/cart/*"
+  to = "https://square.link/u/GzRtVHoB"
+  status = 302
