@@ -56,6 +56,10 @@ h3 { font-size: 1.6rem; }
 .hero { background: #000; }
 .hero img { width: 100%; height: auto; max-height: calc(100vh - 100px); object-fit: cover; }
 
+/* Home promo video (vertical phone video) */
+.promo-video { text-align: center; padding: 60px 16px; background: var(--bg-2); }
+.promo-video video { display: block; margin: 20px auto 0; width: 100%; max-width: 405px; height: auto; max-height: 80vh; aspect-ratio: 9 / 16; background: #000; border: 1px solid var(--line); }
+
 /* About row: image | text | image */
 .about-row { display: grid; grid-template-columns: 30% 1fr 30%; align-items: center; background: #0e0d0a; padding: 120px 0; }
 .about-img img { width: 100%; height: 560px; object-fit: cover; }
