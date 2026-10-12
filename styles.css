@@ -51,20 +51,22 @@ h3 { font-size: 1.6rem; }
 .btn-outline { background: transparent; border-color: var(--white); color: var(--white); padding: 0 24px; }
 .btn-outline:hover { background: var(--white); color: #000; }
 
-/* Home hero: dark photo with "Welcome to the" over the big badge */
-.hero { position: relative; min-height: calc(100vh - 100px); display: flex; align-items: center; justify-content: center; text-align: center;
-  background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)), url(/images/hero-collage.jpg) center/cover no-repeat, #111; }
-.hero-inner { padding: 60px 24px; }
-.hero-welcome { color: var(--white); font: 300 clamp(2rem, 5vw, 4rem)/1 var(--body-font); margin: 0 0 10px; }
-.hero-badge { width: min(620px, 80vw); margin: 0 auto; filter: drop-shadow(0 10px 30px rgba(0,0,0,.6)); }
-.tagline-band { background: var(--bg-2); text-align: center; padding: 50px 24px; border-bottom: 1px solid var(--line); }
-.tagline-band p { margin: 0; font: 500 clamp(1.8rem, 4vw, 3rem)/1.1 var(--heading-font); color: var(--heading); letter-spacing: .04em; }
+/* Home hero: the mural already carries "Welcome to the" and the badge */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.hero { background: #000; }
+.hero img { width: 100%; height: auto; max-height: calc(100vh - 100px); object-fit: cover; }
 
-/* Image + text rows */
-.split { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
-.split-rev .split-img { order: 2; }
-.split-img img { width: 100%; height: 520px; object-fit: cover; }
-.split-text p { margin: 0 0 28px; }
+/* About row: image | text | image */
+.about-row { display: grid; grid-template-columns: 30% 1fr 30%; align-items: center; background: #0e0d0a; padding: 120px 0; }
+.about-img img { width: 100%; height: 560px; object-fit: cover; }
+.about-text { padding: 0 60px; text-align: center; }
+.about-text p { margin: 0 0 28px; }
+
+/* Menu call-to-action over the wings photo */
+.menu-cta { text-align: center; padding: 160px 24px;
+  background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(/images/menu-wings.jpg) center/cover no-repeat; }
+.menu-cta .label { color: var(--white); }
+.menu-cta h2 { margin-bottom: 30px; }
 
 /* Page title area */
 .page-title { background: var(--bg-2); text-align: center; padding: 90px 24px 60px; }
@@ -129,8 +131,12 @@ h3 { font-size: 1.6rem; }
   .split, .two-col, .gallery3 { grid-template-columns: 1fr; gap: 32px; }
   .split-rev .split-img { order: 0; }
   .split-img img, .gallery3 img { height: 320px; }
+  .about-row { grid-template-columns: 1fr 1fr; padding: 60px 0 20px; }
+  .about-text { grid-column: 1 / -1; order: 3; padding: 40px 16px; }
+  .about-img img { height: 260px; }
+  .menu-cta { padding: 90px 16px; }
   .form { padding: 28px 20px; }
-  .hero { min-height: 70vh; }
+  .hero img { height: 60vh; max-height: none; object-position: center 40%; }
   .footer-bottom { justify-content: center; text-align: center; padding: 22px 16px; }
   .footer-nav { justify-content: center; }
 }
