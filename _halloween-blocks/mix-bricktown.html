@@ -39,3 +39,4 @@
 <script>(function(){var s=document.getElementById("wh-hw");if(!s)return;var n=Date.now();
 if(n>=Date.parse(s.getAttribute("data-until"))){s.parentNode.removeChild(s);return;}
 var c=s.querySelectorAll("[data-ends]");for(var i=0;i<c.length;i++){if(n>=Date.parse(c[i].getAttribute("data-ends")))c[i].parentNode.removeChild(c[i]);}})();</script>
+<script>(function(){var s=document.getElementById("wh-hw");if(!s)return;var h=document.querySelector("body > header, header, .site-header, nav");if(h&&h.parentNode&&!h.contains(s))h.parentNode.insertBefore(s,h.nextSibling);})();</script>
