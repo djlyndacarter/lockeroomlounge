@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Booking Request - The LOCKEROOM Lounge</title>
-  <meta name="description" content="Book corporate events, holiday parties, reunions and birthdays at The LOCKEROOM Lounge in Detroit.">
-  <meta property="og:title" content="Booking Request - The LOCKEROOM Lounge">
-  <meta property="og:description" content="Book corporate events, holiday parties, reunions and birthdays at The LOCKEROOM Lounge in Detroit.">
+  <title>Book an Event - The LOCKEROOM Lounge</title>
+  <meta name="description" content="Book a private event or party at The LOCKEROOM Lounge in Detroit: full venue buyouts, private sections and group reservations. Request a booking online.">
+  <meta property="og:title" content="Book an Event - The LOCKEROOM Lounge">
+  <meta property="og:description" content="Book a private event or party at The LOCKEROOM Lounge in Detroit: full venue buyouts, private sections and group reservations. Request a booking online.">
   <meta property="og:image" content="/images/hero.jpeg">
   <link rel="icon" href="/images/logo-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,7 +25,7 @@
         <a href="/events/">Events</a>
         <a href="/employment/">Employment</a>
         <a href="/about/">About</a>
-        <a href="/booking/" class="active">Booking</a>
+        <a href="/booking/" class="active">Book an Event</a>
         <a href="/contact/">Contact</a>
       </nav>
       <a class="brand" href="/"><img src="/images/logo.png" alt="The LOCKEROOM Lounge"></a>
@@ -38,46 +38,229 @@
   </header>
 
   <main>
-    <section class="page-title">
-      <p class="label">Private Events</p>
-      <h1>Booking Request</h1>
-    </section>
-    <section class="container two-col">
-      <div class="prose">
-        <p>Corporate events, holiday parties, class reunions, birthdays and every other kind of celebration: our staff is here to help, and we can customize the menu for your group. We work with individuals and private party planners.</p>
-        <p>Fill out the form and we'll get back to you within 48 hours with ideas, pricing and availability.</p>
-      </div>
-        <form class="form" name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks/">
-          <input type="hidden" name="form-name" value="booking">
-          <p class="hidden"><label>Leave this empty: <input name="bot-field"></label></p>
-          <label>Name *
-            <input type="text" name="name" required>
-          </label>
-          <label>Email *
-            <input type="email" name="email" required>
-          </label>
-          <label>Phone *
-            <input type="tel" name="phone" required>
-          </label>
-          <label>Date Requested *
-            <input type="date" name="date" required>
-          </label>
-          <label>Time Requested
-            <input type="time" name="time">
-          </label>
-          <label>Number of Guests *
-            <input type="number" name="guests" required>
-          </label>
-          <label>What is the Occasion (Birthday - Business - etc)?
-            <input type="text" name="occasion">
-          </label>
-          <label>Any Additional Details?
-            <textarea name="details" rows="5"></textarea>
-          </label>
-          <label class="check"><input type="checkbox" name="sms-consent" value="yes"> <span>Text me updates from The LOCKEROOM. Up to 2 messages per week; reply STOP to opt out. <a href="/terms/">Terms</a></span></label>
-          <button class="btn" type="submit">Submit</button>
-        </form>
-    </section>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Jost:wght@400;500;600&display=swap">
+<style>
+#whc{--bg:#0b0b0b;--panel:#151515;--line:rgba(255,255,255,.13);--text:#c9c9c9;--head:#ffffff;--muted:#9a9a9a;
+ --acc:#f20100;--acc-ink:#ffffff;--feat:#000000;--feat-text:#d6d6d6;--field:#0f0f0f;--r:0;
+ --hf:'Oswald','Bebas Neue',Impact,'Arial Narrow',sans-serif;--bf:'Jost','Helvetica Neue',Arial,sans-serif;
+ display:block;box-sizing:border-box;background:var(--bg);color:var(--text);font:400 16px/1.6 var(--bf);text-align:left;width:100%;overflow:hidden}
+#whc *,#whc *::before,#whc *::after{box-sizing:border-box}
+#whc h1,#whc h2,#whc h3,#whc h4,#whc p,#whc ul,#whc ol,#whc fieldset,#whc legend,#whc figure{margin:0;padding:0;border:0}
+#whc h1,#whc h2,#whc h3,#whc h4{font-family:var(--hf);color:var(--head);font-weight:600;line-height:1.08;text-transform:uppercase;letter-spacing:.04em;}
+#whc a{color:var(--acc);text-decoration:none}
+#whc a:hover{text-decoration:underline}
+#whc .c-w{max-width:1160px;margin:0 auto;padding:0 24px}
+#whc .c-kick{font:600 12px/1.4 var(--bf);letter-spacing:.22em;text-transform:uppercase;color:var(--acc);margin-bottom:12px}
+#whc .c-hero{padding:72px 0 56px;text-align:center;border-bottom:1px solid var(--line)}
+#whc .c-hero h1{font-size:clamp(40px,7vw,76px);margin-bottom:16px}
+#whc .c-hero p.c-lead{max-width:680px;margin:0 auto 28px;font-size:18px}
+#whc .c-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+#whc .c-b{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 26px;border:2px solid var(--acc);background:var(--acc);color:var(--acc-ink);
+ font:600 14px/1 var(--bf);letter-spacing:.08em;text-transform:uppercase;border-radius:var(--r);cursor:pointer;text-decoration:none}
+#whc .c-b:hover{filter:brightness(1.08);text-decoration:none}
+#whc .c-b.c-o{background:transparent;color:var(--head);border-color:var(--line)}
+#whc .c-b.c-o:hover{border-color:var(--acc)}
+#whc .c-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px;margin:40px auto 0;text-align:left}
+#whc .c-steps li{list-style:none;border:1px solid var(--line);background:var(--panel);padding:18px 18px 16px;border-radius:var(--r);font-size:15px}
+#whc .c-steps b{display:block;font-family:var(--hf);color:var(--head);font-size:20px;margin-bottom:4px;text-transform:uppercase;letter-spacing:.04em;}
+#whc .c-steps span{display:inline-block;color:var(--acc);font-weight:600;margin-right:6px}
+#whc .c-sec{padding:56px 0 8px}
+#whc .c-sec-h{display:flex;align-items:center;gap:18px;margin-bottom:6px}
+#whc .c-sec-h h2{font-size:clamp(28px,4vw,40px)}
+#whc .c-sec-h::after{content:"";flex:1;height:2px;background:var(--acc);opacity:.85}
+#whc .c-note{color:var(--muted);font-size:14px;margin-bottom:8px}
+#whc .c-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+#whc .c-it{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:20px 20px 14px;display:flex;flex-direction:column}
+#whc .c-it h3{font-size:23px;margin-bottom:6px}
+#whc .c-it .c-d{font-size:15px;color:var(--muted);margin-bottom:10px}
+#whc .c-row{display:flex;align-items:center;gap:12px;padding:10px 0;border-top:1px dashed var(--line)}
+#whc .c-row .c-lbl{flex:1;min-width:0;font-weight:600;color:var(--head);font-size:15px}
+#whc .c-row .c-lbl small{font-weight:400;color:var(--muted);margin-left:6px;font-size:13px}
+#whc .c-row .c-pr{font-weight:600;color:var(--acc);font-size:17px;white-space:nowrap}
+#whc .c-row .c-pr small{font-size:12px;font-weight:500}
+#whc .c-q{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;flex:0 0 auto}
+#whc .c-q button{width:38px;height:38px;border:0;background:transparent;color:var(--head);font:600 20px/1 var(--bf);cursor:pointer;padding:0}
+#whc .c-q button:hover{background:var(--acc);color:var(--acc-ink)}
+#whc .c-q input{width:40px;height:38px;border:0;border-left:1px solid var(--line);border-right:1px solid var(--line);background:transparent;color:var(--head);
+ text-align:center;font:600 16px/1 var(--bf);padding:0;margin:0;-moz-appearance:textfield;appearance:textfield;border-radius:0;box-shadow:none}
+#whc .c-q input::-webkit-outer-spin-button,#whc .c-q input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+#whc .c-row.c-on .c-q{border-color:var(--acc)}
+#whc .c-ch{display:none;gap:10px;flex-wrap:wrap;padding:10px 0 4px}
+#whc .c-it.c-on .c-ch{display:flex}
+#whc .c-ch label{flex:1 1 160px;font-size:13px;color:var(--muted);display:grid;gap:4px}
+#whc .c-feat{background:var(--feat);color:var(--feat-text);border:2px solid var(--acc);border-radius:var(--r);padding:28px;margin-top:18px;position:relative}
+#whc .c-feat .c-badge{position:absolute;top:-13px;left:24px;background:var(--acc);color:var(--acc-ink);font:600 12px/1 var(--bf);letter-spacing:.18em;text-transform:uppercase;padding:7px 12px}
+#whc .c-feat .c-grid{margin-top:0}
+#whc .c-feat .c-it{background:transparent;border:0;padding:0}
+#whc .c-feat h3,#whc .c-feat .c-row .c-lbl,#whc .c-feat .c-q button,#whc .c-feat .c-q input{color:#fff}
+#whc .c-feat .c-it .c-d,#whc .c-feat .c-row .c-lbl small,#whc .c-feat .c-ch label{color:var(--feat-text);opacity:.85}
+#whc .c-feat .c-row,#whc .c-feat .c-q,#whc .c-feat .c-q input{border-color:rgba(255,255,255,.2)}
+#whc .c-feat .c-q button:hover{color:var(--acc-ink)}
+#whc .c-mimg{max-width:820px;margin:18px auto 0;display:grid;gap:16px}
+#whc .c-mimg img{display:block;width:100%;height:auto;border:1px solid var(--line);box-shadow:0 10px 30px rgba(0,0,0,.12)}
+#whc .c-fine{text-align:center;color:var(--muted);font-size:14px;margin:26px 0 0}
+#whc .c-form-wrap{padding:64px 0 80px;margin-top:48px;border-top:1px solid var(--line)}
+#whc .c-form-head{text-align:center;max-width:680px;margin:0 auto 32px}
+#whc .c-form-head h2{font-size:clamp(32px,5vw,52px);margin-bottom:10px}
+#whc form{max-width:860px;margin:0 auto;display:grid;gap:22px}
+#whc fieldset{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:24px 24px 26px;display:block;min-width:0}
+#whc .c-fg{display:grid;grid-template-columns:repeat(2,1fr);gap:16px 18px}
+#whc legend{float:left;width:100%;margin-bottom:16px !important;font:600 22px/1.2 var(--hf);color:var(--head);text-transform:uppercase;letter-spacing:.04em;}
+#whc legend span{color:var(--acc);margin-right:8px}
+#whc .c-full{grid-column:1/-1}
+#whc label.c-f{display:grid;gap:6px;font-size:14px;font-weight:600;color:var(--head);min-width:0}
+#whc label.c-f i{font-style:normal;color:var(--acc)}
+#whc label.c-f em{font-style:normal;font-weight:400;color:var(--muted);font-size:13px}
+#whc input[type=text],#whc input[type=email],#whc input[type=tel],#whc input[type=date],#whc input[type=time],#whc input[type=number]:not(.c-qi),#whc select,#whc textarea{
+ width:100%;min-height:46px;margin:0;padding:10px 12px;background:var(--field);color:var(--head);border:1px solid var(--line);border-radius:var(--r);
+ font:400 16px/1.4 var(--bf);box-shadow:none;outline:none;-webkit-appearance:none;appearance:none;height:auto}
+#whc select{background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);
+ background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px;background-repeat:no-repeat;padding-right:34px}
+#whc select option{background:var(--field);color:var(--head)}
+#whc textarea{min-height:96px;resize:vertical}
+#whc input:focus,#whc select:focus,#whc textarea:focus{border-color:var(--acc);box-shadow:0 0 0 3px color-mix(in srgb,var(--acc) 25%,transparent)}
+#whc .c-two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+#whc .c-opts{display:flex;flex-wrap:wrap;gap:10px}
+#whc .c-opt{position:relative;display:flex}
+#whc .c-opt input{position:absolute;opacity:0;width:1px;height:1px}
+#whc .c-opt span{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 16px;border:1px solid var(--line);border-radius:var(--r);cursor:pointer;
+ font-size:15px;color:var(--head);background:var(--field);user-select:none}
+#whc .c-opt input:checked+span{border-color:var(--acc);background:var(--acc);color:var(--acc-ink)}
+#whc .c-opt input:focus-visible+span{outline:2px solid var(--acc);outline-offset:2px}
+#whc .c-big .c-opt{flex:1 1 220px}
+#whc .c-big .c-opt span{flex:1;flex-direction:column;align-items:flex-start;gap:2px;padding:14px 16px}
+#whc .c-big .c-opt span b{font-size:17px}
+#whc .c-big .c-opt span small{font-size:13px;opacity:.85}
+#whc .c-grp{display:grid;gap:8px}
+#whc .c-grp>p{font-size:14px;font-weight:600;color:var(--head)}
+#whc .c-grp>p em{font-style:normal;font-weight:400;color:var(--muted)}
+#whc .c-deliv{display:none}
+#whc.c-is-deliv .c-deliv{display:grid}
+#whc legend+.c-fg{clear:both}
+#whc .c-sum{grid-column:1/-1;border:1px dashed var(--line);border-radius:var(--r);padding:14px 16px;font-size:15px}
+#whc .c-sum ul{list-style:none;display:grid;gap:4px;margin-bottom:8px}
+#whc .c-sum li{display:flex;justify-content:space-between;gap:12px}
+#whc .c-sum li span:last-child{white-space:nowrap;font-weight:600;color:var(--head)}
+#whc .c-sum .c-tot{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:8px;font-weight:600;color:var(--head)}
+#whc .c-sum .c-tot b{color:var(--acc);font-size:18px}
+#whc .c-sum .c-empty{color:var(--muted)}
+#whc .c-chk{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--muted)}
+#whc .c-chk input{margin-top:3px;flex:0 0 auto;width:auto;min-height:0}
+#whc .c-submit{display:grid;gap:12px;justify-items:center;text-align:center}
+#whc .c-submit .c-b{min-width:280px;font-size:15px}
+#whc .c-submit p{font-size:13px;color:var(--muted);max-width:560px}
+#whc .c-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+#whc .c-bar{position:fixed;left:0;right:0;bottom:0;z-index:9990;background:var(--feat);color:#fff;border-top:2px solid var(--acc);
+ transform:translateY(110%);transition:transform .25s ease}
+#whc .c-bar.c-show{transform:none}
+#whc .c-bar .c-w{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px}
+#whc .c-bar p{font-size:15px;color:#fff}
+#whc .c-bar p b{color:var(--acc);font-size:18px}
+#whc .c-bar .c-b{min-height:44px;padding:0 18px}
+#whc .c-contact{text-align:center;color:var(--muted);font-size:15px;margin-top:28px}
+@media (max-width:820px){
+ #whc .c-grid{grid-template-columns:1fr}
+ #whc .c-steps{grid-template-columns:1fr}
+ #whc fieldset{padding:20px 16px} #whc .c-fg{grid-template-columns:1fr}
+ #whc .c-hero{padding:52px 0 40px}
+}
+@media (max-width:420px){
+ #whc .c-w{padding:0 16px}
+ #whc .c-row{flex-wrap:wrap}
+ #whc .c-row .c-lbl{flex:1 1 100%}
+ #whc .c-row .c-pr{flex:1}
+ #whc .c-submit .c-b{min-width:0;width:100%}
+ #whc .c-two{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){#whc .c-bar{transition:none}}
+
+#whc .c-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px;text-align:left}
+#whc .c-cards li{list-style:none;border:1px solid var(--line);background:var(--panel);padding:18px;border-radius:var(--r);font-size:15px}
+#whc .c-cards b{display:block;font-family:var(--hf);color:var(--head);font-size:19px;margin-bottom:4px}
+#whc .c-types{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:26px}
+#whc .c-types span{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;color:var(--head);background:var(--panel)}
+#whc .c-big3{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}#whc .c-big3.c-n3{grid-template-columns:repeat(3,1fr)}#whc .c-big3 .c-opt{display:flex}
+#whc label.c-f>span{display:block}
+@media (max-width:820px){#whc .c-cards{grid-template-columns:1fr 1fr}}
+@media (max-width:420px){#whc .c-cards{grid-template-columns:1fr}}
+@media (max-width:640px){#whc .c-big3,#whc .c-big3.c-n3{grid-template-columns:1fr}}
+</style>
+<div id="whc">
+ <section class="c-hero"><div class="c-w">
+  <p class="c-kick">Private Events &amp; Parties</p>
+  <h1>Book Your Event</h1>
+  <p class="c-lead">Birthdays, corporate events, holiday parties, class reunions, game day watch parties and every kind of celebration in between. Our staff is here to help, we can customize the menu for your group, and we work with individuals and private party planners.</p>
+  <div class="c-btns"><a class="c-b" href="#whc-request">Start a Booking Request</a><a class="c-b c-o" href="/catering/">Need Catering Instead?</a></div>
+  <ul class="c-cards"><li><b>Full venue buyout</b>The whole place, just for your guests</li><li><b>Private section or area</b>A space set aside for your group</li><li><b>Reserved tables for my group</b>Seats held together during regular hours</li><li><b>Food &amp; drinks</b>Menus, buffets, drink tickets, open bar or bottle service, built around your group.</li></ul>
+  <div class="c-types"><span>Birthday</span><span>Corporate event</span><span>Holiday party</span><span>Game day / watch party</span><span>Wedding, shower or engagement</span><span>Graduation</span><span>Class or family reunion</span><span>Repast / memorial</span><span>Fundraiser or community event</span></div>
+  <ol class="c-steps">
+   <li><b><span>1</span>Tell us about your event</b>Date, time, guest count, budget and the kind of space you want.</li>
+   <li><b><span>2</span>We check availability</b>Our events team reaches out with options and pricing.</li>
+   <li><b><span>3</span>Lock it in</b>Confirm your date, menu and bar package, then celebrate.</li>
+  </ol>
+ </div></section>
+
+ <section class="c-form-wrap" id="whc-request" style="margin-top:0;border-top:0"><div class="c-w">
+  <div class="c-form-head"><p class="c-kick">Booking Request</p><h2>Plan Your Event</h2>
+   <p>Fill this out and our events team will follow up to confirm availability, details and pricing. Questions? Email <a href="mailto:catering@wrightbars.com">catering@wrightbars.com</a></p></div>
+  <form name="booking" method="POST" action="/booking/thanks/" data-netlify="true" netlify-honeypot="bot-field" id="whc-form">
+   <input type="hidden" name="form-name" value="booking">
+   <input type="hidden" name="subject" value="New booking request - The LOCKEROOM Lounge" data-remove-prefix>
+   <input type="hidden" name="venue" value="The LOCKEROOM Lounge">
+   <p class="c-hp"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+   <fieldset><legend><span>01</span>Your Info</legend><div class="c-fg">
+    <label class="c-f"><span>Full name <i>*</i></span><input type="text" name="name" autocomplete="name" required></label>
+    <label class="c-f"><span>Company or organization <em>(optional)</em></span><input type="text" name="organization" autocomplete="organization"></label>
+    <label class="c-f"><span>Phone <i>*</i></span><input type="tel" name="phone" autocomplete="tel" inputmode="tel" required></label>
+    <label class="c-f"><span>Email <i>*</i></span><input type="email" name="email" autocomplete="email" required></label>
+    <div class="c-grp c-full"><p>Best way to reach you</p><div class="c-opts"><label class="c-opt"><input type="radio" name="contact_method" value="Call"><span>Call</span></label><label class="c-opt"><input type="radio" name="contact_method" value="Text"><span>Text</span></label><label class="c-opt"><input type="radio" name="contact_method" value="Email"><span>Email</span></label></div></div>
+   </div></fieldset>
+
+   <fieldset><legend><span>02</span>Your Event</legend><div class="c-fg">
+    
+    <div class="c-grp c-full"><p>What would you like to book? <i style="font-style:normal;color:var(--acc)">*</i></p><div class="c-opts c-big c-big3"><label class="c-opt"><input type="radio" name="booking_type" value="Full venue buyout" required><span><b>Full venue buyout</b><small>The whole place, just for your guests</small></span></label><label class="c-opt"><input type="radio" name="booking_type" value="Private section or area" required><span><b>Private section or area</b><small>A space set aside for your group</small></span></label><label class="c-opt"><input type="radio" name="booking_type" value="Reserved tables for my group" required><span><b>Reserved tables for my group</b><small>Seats held together during regular hours</small></span></label><label class="c-opt"><input type="radio" name="booking_type" value="Not sure yet" required><span><b>Not sure yet</b><small>We&#x27;ll help you pick the right fit</small></span></label></div></div>
+    <label class="c-f"><span>Type of event <i>*</i></span><select name="event_type" required><option value="">Choose…</option><option>Birthday</option><option>Corporate event</option><option>Holiday party</option><option>Game day / watch party</option><option>Wedding, shower or engagement</option><option>Graduation</option><option>Class or family reunion</option><option>Repast / memorial</option><option>Fundraiser or community event</option><option>Other</option></select></label>
+    <label class="c-f"><span>Guest count <i>*</i></span><input type="number" name="guest_count" min="1" max="5000" inputmode="numeric" required></label>
+    <label class="c-f"><span>Event date <i>*</i></span><input type="date" name="date" required></label>
+    <label class="c-f"><span>Backup date <em>(optional)</em></span><input type="date" name="alt_date"></label>
+    <label class="c-f"><span>Start time <i>*</i></span><input type="time" name="time_start" required></label>
+    <label class="c-f"><span>End time <i>*</i></span><input type="time" name="time_end" required></label>
+    <label class="c-f c-full"><span>Budget <i>*</i></span><select name="budget" required><option value="">Choose…</option><option>Under $500</option><option>$500 – $1,000</option><option>$1,000 – $2,500</option><option>$2,500 – $5,000</option><option>$5,000+</option><option>Not sure yet</option></select></label>
+   </div></fieldset>
+
+   <fieldset><legend><span>03</span>Food &amp; Drinks</legend><div class="c-fg">
+    <div class="c-grp c-full"><p>Food</p><div class="c-opts"><label class="c-opt"><input type="radio" name="food" value="Light bites / appetizers"><span>Light bites / appetizers</span></label><label class="c-opt"><input type="radio" name="food" value="Buffet"><span>Buffet</span></label><label class="c-opt"><input type="radio" name="food" value="Full catering menu"><span>Full catering menu</span></label><label class="c-opt"><input type="radio" name="food" value="No food"><span>No food</span></label><label class="c-opt"><input type="radio" name="food" value="Not sure yet"><span>Not sure yet</span></label></div></div>
+    <div class="c-grp c-full"><p>Bar</p><div class="c-opts"><label class="c-opt"><input type="radio" name="bar" value="Cash bar"><span>Cash bar</span></label><label class="c-opt"><input type="radio" name="bar" value="Drink tickets"><span>Drink tickets</span></label><label class="c-opt"><input type="radio" name="bar" value="Open bar"><span>Open bar</span></label><label class="c-opt"><input type="radio" name="bar" value="Bottle service"><span>Bottle service</span></label><label class="c-opt"><input type="radio" name="bar" value="Not sure yet"><span>Not sure yet</span></label></div></div>
+    <div class="c-grp c-full"><p>Would you like any of these? <em>Availability and pricing confirmed with your quote.</em></p><div class="c-opts"><label class="c-opt"><input type="checkbox" name="extras" value="DJ or music"><span>DJ or music</span></label><label class="c-opt"><input type="checkbox" name="extras" value="Microphone or speakers"><span>Microphone or speakers</span></label><label class="c-opt"><input type="checkbox" name="extras" value="TVs or screen"><span>TVs or screen</span></label><label class="c-opt"><input type="checkbox" name="extras" value="Decorations"><span>Decorations</span></label><label class="c-opt"><input type="checkbox" name="extras" value="Bringing my own cake"><span>Bringing my own cake</span></label><label class="c-opt"><input type="checkbox" name="extras" value="Reserved parking help"><span>Reserved parking help</span></label></div></div>
+   </div></fieldset>
+
+   <fieldset><legend><span>04</span>Anything Else?</legend><div class="c-fg">
+    <label class="c-f c-full"><span>Tell us about your event <em>(theme, special requests, allergies, accessibility needs)</em></span><textarea name="notes" rows="5"></textarea></label>
+    <label class="c-f"><span>How did you hear about us?</span><select name="heard_about"><option value="">Choose…</option><option>I&#x27;m a regular</option><option>Instagram</option><option>Facebook</option><option>TikTok</option><option>Google</option><option>Friend or family</option><option>Attended an event</option><option>Other</option></select></label>
+    <label class="c-chk c-full"><input type="checkbox" name="sms-consent" value="yes"> <span>Text me updates from The LOCKEROOM. Up to 2 messages per week; reply STOP to opt out. <a href="/terms/">Terms</a></span></label>
+   </div></fieldset>
+
+   <div class="c-submit"><button class="c-b" type="submit">Send Booking Request</button>
+    <p>Sending a request does not book your date or charge you. We'll contact you to confirm availability, pricing and any deposit.</p></div>
+  </form>
+  <p class="c-contact">The LOCKEROOM Lounge · 18290 Livernois Ave, Detroit, MI 48221 · <a href="mailto:catering@wrightbars.com">catering@wrightbars.com</a></p>
+ </div></section>
+</div>
+<script>
+(function(){
+ var form=document.getElementById('whc-form'); if(!form) return;
+ var n=new Date(); n.setMinutes(n.getMinutes()-n.getTimezoneOffset()); var today=n.toISOString().slice(0,10);
+ var dt=form.querySelector('[name=date]'), alt=form.querySelector('[name=alt_date]'); dt.min=today; alt.min=today;
+ form.addEventListener('submit',function(){
+  var nm=form.querySelector('[name=name]').value.trim(), d=dt.value, g=form.querySelector('[name=guest_count]').value;
+  var ven=form.querySelector('[name=venue]:checked')||form.querySelector('input[type=hidden][name=venue]');
+  form.querySelector('[name=subject]').value='Booking request: '+nm+(d?' - '+d:'')+(g?' ('+g+' guests)':'')+' - '+(ven?ven.value:"The LOCKEROOM Lounge");
+ });
+})();
+</script>
+
   </main>
 
   <footer class="site-footer">
@@ -100,7 +283,7 @@
         <a href="/events/">Events</a>
         <a href="/employment/">Employment</a>
         <a href="/about/">About</a>
-        <a href="/booking/" class="active">Booking</a>
+        <a href="/booking/" class="active">Book an Event</a>
         <a href="/contact/">Contact</a>
       </nav>
     </div>
