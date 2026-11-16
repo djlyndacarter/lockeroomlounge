@@ -51,6 +51,19 @@ h3 { font-size: 1.6rem; }
 .btn-outline { background: transparent; border-color: var(--white); color: var(--white); padding: 0 24px; }
 .btn-outline:hover { background: var(--white); color: #000; }
 
+/* Order Online: always the solid red button so it stands out */
+.btn-order { background: var(--red); border-color: var(--red); color: var(--white); padding: 0 24px; }
+.btn-order:hover { background: #fff; border-color: #fff; color: #000; }
+.btn-lg { font-size: 15px; line-height: 52px; padding: 0 40px; }
+.order-strip { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px 28px; background: #160000; border-top: 2px solid var(--red); border-bottom: 2px solid var(--red); padding: 24px 16px; text-align: center; }
+.order-strip p { margin: 0; color: var(--heading); font-size: 19px; }
+.order-strip strong { color: var(--white); font-family: var(--heading-font); font-size: 26px; font-weight: 600; margin-right: 6px; }
+.menu-cta .btn { margin: 6px; }
+.menu-order { margin: 0 auto; }
+.menu-order p { margin: 0 0 14px; color: var(--heading); }
+.menu-order-end { margin-top: 36px; }
+.menu-pages img { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+
 /* Home hero: the mural already carries "Welcome to the" and the badge */
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .hero { background: #000; }
@@ -163,11 +176,13 @@ h3 { font-size: 1.6rem; }
 @media (max-width: 1024px) {
   .event-grid, .weekly-grid { grid-template-columns: repeat(2, 1fr); }
   .feature { grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 40px; }
-  .header-inner { grid-template-columns: 44px 1fr 44px; padding: 10px 16px; min-height: 76px; }
+  .header-inner { grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 10px; padding: 10px 16px; min-height: 76px; }
   .brand { justify-self: center; }
   .brand img { height: 60px; }
+  .nav-toggle { justify-self: start; }
   .nav-toggle { display: block; }
-  .header-right { display: none; }
+  .header-right .icon { display: none; }
+  .header-right .btn-order { padding: 0 14px; font-size: 12px; line-height: 38px; white-space: nowrap; }
   .site-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--bg); border-top: 1px solid var(--line); padding: 10px 24px 20px; }
   .site-nav a { padding: 12px 0; border-bottom: 1px solid var(--line); }
   .site-nav a::after { display: none; }
