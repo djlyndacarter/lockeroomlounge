@@ -17,7 +17,7 @@
   status = 301
 [[redirects]]
   from = "/wp-content/uploads/2026/02/Lockeroom-1.pdf"
-  to = "/menu/lockeroom-menu.pdf"
+  to = "/menu/"
   status = 301
 [[redirects]]
   from = "/cart/*"
@@ -27,3 +27,8 @@
   from = "/gallery/*"
   to = "/"
   status = 302
+[[redirects]]
+  from = "/menu/lockeroom-menu.pdf"
+  to = "/menu/"
+  status = 301
+  force = true
